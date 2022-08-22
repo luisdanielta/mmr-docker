@@ -1,0 +1,43 @@
+version: '2.1'
+# mongodb - mysql - redis
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    restart: always
+    volumes:
+      - ./data/mongodb:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: 'root'
+      MONGO_INITDB_ROOT_PASSWORD: '6512'
+
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+    restart: always
+    volumes:
+      - ./data/redis:/data
+    environment:
+      REDIS_PASSWORD: '6512'
+
+  msyql:
+    image: mysql
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_ROOT_PASSWORD: '6512' 
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: '6512'
+          
+volumes:
+  local-data:
+    driver: local
