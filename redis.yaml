@@ -7,9 +7,9 @@ services:
       - "6379:6379"
     restart: always
     volumes:
-      - ./data/redis:/data
+      - ./data/redis:/data #you path - default: <path>:/data
     environment:
-      REDIS_PASSWORD: '6512'
+      REDIS_PASSWORD: '6512' #you password
 
 volumes:
   local-data:

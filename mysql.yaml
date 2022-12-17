@@ -7,12 +7,12 @@ services:
       - "3306:3306"
     restart: always
     volumes:
-      - ./data/mysql:/var/lib/mysql
+      - ./data/mysql:/var/lib/mysql #you path - default: <path>:/var/lib/mysql
     environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_ROOT_PASSWORD: '6512' 
-      MYSQL_USER: 'user'
-      MYSQL_PASSWORD: '6512'
+      MYSQL_DATABASE: 'db' #you name databate
+      MYSQL_ROOT_PASSWORD: '6512' # you root passd
+      MYSQL_USER: 'user' #you username
+      MYSQL_PASSWORD: '6512' #you passd - username
           
 volumes:
   local-data:
