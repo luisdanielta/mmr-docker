@@ -1,0 +1,16 @@
+version: '2.1'
+services:
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+    restart: always
+    volumes:
+      - ./data/redis:/data
+    environment:
+      REDIS_PASSWORD: '6512'
+
+volumes:
+  local-data:
+    driver: local

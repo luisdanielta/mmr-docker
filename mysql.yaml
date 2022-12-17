@@ -1,0 +1,19 @@
+version: '2.1'
+services:
+  msyql:
+    image: mysql
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_ROOT_PASSWORD: '6512' 
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: '6512'
+          
+volumes:
+  local-data:
+    driver: local
