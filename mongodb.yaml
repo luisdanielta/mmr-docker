@@ -12,3 +12,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: 'root' #you username
       MONGO_INITDB_ROOT_PASSWORD: '6512' #you password
+
+
+volumes:
+  mongodb_data:
+    driver: local
